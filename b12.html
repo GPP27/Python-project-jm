@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Webpage</title>
+    <link rel ="stylesheet"href="M11.css">
+</head>
+<body>
+  
+<header>
+        <img id="logo" src="/storage/emulated/0/Download/1589276548phpD7Vwc2.jpeg""alt="College Logo">
+        <div class="navbar"><h1>GOVERNMENT POLYTECHNIC PALANPUR</h1>
+             <ul>
+      <li><a href="#">Home</a>
+   <li>  <a href="#">Schedule</a>
+   <li> <a href="#">Contact</a></li>
+   </li></li>
+  <li>  <a href="main login.html">Teacher section</a></li>
+  </div>
+    </ul>
+    </header>
+     </div><hr>
+              <section>
+    <div class="display-section">
+    <h2>Display Timetable</h2>
+    <table>
+    <thead>
+    <tr>
+    <th>Day</th>
+    <th>Time</th>
+    <th>Subject</th>
+    </tr>
+    </thead>
+    <tbody id="timetableBody">
+    </tbody>
+    </table>
+    </div>
+    </section>
+            <script>
+     const timetableData = JSON.parse(localStorage.getItem('timetable')) || [];
+    const timetableBody = document.getElementById('timetableBody');
+      timetableData.forEach(entry => {
+    const newRow = timetableBody.insertRow();
+    newRow.innerHTML = `<td>${entry.day}</td><td>${entry.time}</td><td>${entry.subject}</td>`;
+    });
+    </script>
+<hr>  <footer>
+    <p><center>PYTHON PROJECT @2023<center></p>
+  </footer>
+    </body>
+</html>
